@@ -29,7 +29,6 @@ async function getToken() {
     token = data.access_token;
     // expires_in is in seconds → convert to ms
     tokenExpiry = now + data.expires_in * 1000 - 5000; // refresh 5s before expiry
-    console.log("Fetched new token, expires in:", data.expires_in, "seconds");
   }
 
   return token!;

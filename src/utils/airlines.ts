@@ -1,0 +1,62 @@
+export const AIRLINE_NAMES: Record<string, string> = {
+  // Major global carriers
+  AA: "American Airlines",
+  DL: "Delta Air Lines",
+  UA: "United Airlines",
+  BA: "British Airways",
+  AF: "Air France",
+  LH: "Lufthansa",
+  EK: "Emirates",
+  SQ: "Singapore Airlines",
+  QF: "Qantas",
+  KQ: "Kenya Airways",
+  QR: "Qatar Airways",
+  EY: "Etihad Airways",
+  TK: "Turkish Airlines",
+  JL: "Japan Airlines",
+  NH: "All Nippon Airways (ANA)",
+  AC: "Air Canada",
+  AI: "Air India",
+  ET: "Ethiopian Airlines",
+  KL: "KLM Royal Dutch Airlines",
+  PR: "Philippine Airlines",
+  FI: "Icelandair",
+  HA: "Hawaiian Airlines",
+  FZ: "FlyDubai",
+  G4: "Allegiant Air",
+  WN: "Southwest Airlines",
+  VS: "Virgin Atlantic",
+  VA: "Virgin Australia",
+  AS: "Alaska Airlines",
+  B6: "JetBlue Airways",
+  NZ: "Air New Zealand",
+  CX: "Cathay Pacific Airways",
+  CZ: "China Southern Airlines",
+  MU: "China Eastern Airlines",
+  KE: "Korean Air",
+  BR: "EVA Air",
+  TG: "Thai Airways",
+  SK: "Scandinavian Airlines (SAS)",
+  AY: "Finnair",
+  SN: "Brussels Airlines",
+  SV: "Saudi Arabian Airlines",
+  SA: "South African Airways",
+  IB: "Iberia",
+  MS: "EgyptAir",
+  GF: "Gulf Air",
+  GP: "GP Aviation",
+  HR: "Hahn Air",
+  W2: "World2Fly",
+  TP: "TAP Air Portugal",
+  WB: "RwandAir",
+  LX: "Swiss Airlines",
+  WS: "WestJet",
+};
+
+/**
+ * Get the full airline name from its IATA code.
+ * Falls back to the code if the airline is not found.
+ */
+export function getAirlineName(code: string): string {
+  return AIRLINE_NAMES[code] || code;
+}

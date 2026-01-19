@@ -9,6 +9,7 @@ import FlightListSkeleton from "@/components/FlightListSkeleton";
 import { Container, Grid, Stack } from "@mui/material";
 import { useMemo, useState } from "react";
 import ResultsErrorState from "@/components/ResultsErrorState";
+import { useFXAutoRefresh } from "@/hooks/useFXAutoRefresh";
 
 type Flight = {
   price: { total: string };
@@ -26,6 +27,7 @@ async function fetchFlights(origin: string, destination: string, date: string) {
 }
 
 export default function ResultsPage() {
+  useFXAutoRefresh();
   const searchParams = useSearchParams();
   const origin = searchParams.get("origin") || "";
   const destination = searchParams.get("destination") || "";
@@ -61,7 +63,6 @@ export default function ResultsPage() {
     });
   }, [flights, filters]);
 
-  // --- Loading Skeleton & Error ---
   if (isLoading) return <FlightListSkeleton count={5} />;
   if (isError) return <ResultsErrorState message={(error as Error)?.message} />;
 

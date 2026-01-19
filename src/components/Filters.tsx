@@ -3,13 +3,14 @@ import {
   Box,
   Typography,
   Slider,
-  FormControl,
   FormControlLabel,
   Checkbox,
   FormGroup,
   Select,
   MenuItem,
+  Stack,
 } from "@mui/material";
+import CurrencySwitcher from "./CurrencySwitcher";
 
 type FiltersState = {
   maxPrice: number;
@@ -26,16 +27,22 @@ export default function Filters({
   filters: FiltersState;
   setFilters: (f: FiltersState) => void;
 }) {
-  // Get unique airlines from results
+  // get airlines from res
   const airlines = Array.from(
     new Set(flights.map((f) => f.validatingAirlineCodes[0])),
   );
 
   return (
     <Box>
-      <Typography variant="h6" gutterBottom>
-        Filters
-      </Typography>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        mb={2}
+      >
+        <Typography variant="h6">Filters</Typography>
+        <CurrencySwitcher />
+      </Stack>
 
       {/* Price */}
       <Typography gutterBottom>Max Price</Typography>
@@ -69,26 +76,34 @@ export default function Filters({
       <Typography gutterBottom mt={2}>
         Airlines
       </Typography>
-      <FormGroup>
-        {airlines.map((code) => (
-          <FormControlLabel
-            key={code}
-            control={
-              <Checkbox
-                checked={filters.airlines.includes(code)}
-                onChange={(e) => {
-                  const updated = e.target.checked
-                    ? [...filters.airlines, code]
-                    : filters.airlines.filter((a) => a !== code);
+      <div
+        style={{
+          maxHeight: 200,
+          overflowY: "auto",
+          paddingRight: 8,
+        }}
+      >
+        <FormGroup>
+          {airlines.map((code) => (
+            <FormControlLabel
+              key={code}
+              control={
+                <Checkbox
+                  checked={filters.airlines.includes(code)}
+                  onChange={(e) => {
+                    const updated = e.target.checked
+                      ? [...filters.airlines, code]
+                      : filters.airlines.filter((a) => a !== code);
 
-                  setFilters({ ...filters, airlines: updated });
-                }}
-              />
-            }
-            label={code}
-          />
-        ))}
-      </FormGroup>
+                    setFilters({ ...filters, airlines: updated });
+                  }}
+                />
+              }
+              label={code}
+            />
+          ))}
+        </FormGroup>
+      </div>
     </Box>
   );
 }

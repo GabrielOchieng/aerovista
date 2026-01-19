@@ -28,9 +28,21 @@ export default function HomePage() {
         maxWidth="md"
         sx={{ backgroundColor: "rgba(0,0,0,0)", p: 4, borderRadius: 2 }}
       >
-        <Typography variant="h4" color="white" mb={2}>
-          Search, Compare, and Track Flight Prices in Real Time
+        <Typography
+          variant="h4"
+          color="white"
+          mb={2}
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "2rem",
+              md: "2.5rem",
+            },
+          }}
+        >
+          Search, Compare, and Track Flight Prices in Real Time.
         </Typography>
+
         <SearchForm onSearch={handleSearch} />
       </Container>
     </Box>
