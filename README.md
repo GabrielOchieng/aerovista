@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AirVista – Flight Search Engine
+
+AirVista is a modern, responsive flight search engine built with **Next.js**. It allows users to:
+
+- Search for flights by origin, destination, and travel dates.
+- Compare prices in real-time.
+- Visualize price trends using interactive charts.
+- Apply advanced filters (stops, airlines, price range).
+- Navigate to airline pages to complete bookings securely.
+
+This project leverages the **Amadeus Self-Service API** for flight data and integrates **Recharts** for live price visualization.
+
+---
+
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Dependencies](#dependencies)
+- [Learn More](#learn-more)
+- [Deployment](#deployment)
+
+---
+
+## Demo
+
+[> AeroVista.](https://aerovista-78tg.vercel.app/)  
+
+---
+
+## Features
+
+- **Smart Flight Search:** Quickly find flights by origin, destination, and date.
+- **Live Price Tracking:** Visual graphs of flight price trends updating in real-time.
+- **Advanced Filters:** Filter flights by stops, airlines, and price range.
+- **Booking Made Simple:** Navigate to airline websites to complete bookings securely.
+- **Responsive Design:** Works seamlessly on mobile and desktop devices.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
+git clone https://github.com/your-username/flight-search-engine.git
+cd flight-search-engine
+npm install
 # or
-yarn dev
+yarn install
 # or
-pnpm dev
+pnpm install
 # or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+bun install
